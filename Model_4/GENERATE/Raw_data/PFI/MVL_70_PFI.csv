@@ -1,0 +1,2 @@
+train,split,model,type,seed,y,names,error_type,X_descriptors,rmse
+70,KN,MVL,reg,43,IDT_ms,Point,rmse,"['X_O2', 'X_N2', 'P', 'T', 'n-i-alkanes', 'cyclic-alkanes']",1.7802867716176023

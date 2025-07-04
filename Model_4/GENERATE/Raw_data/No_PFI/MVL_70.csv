@@ -1,0 +1,2 @@
+train,split,model,type,seed,y,names,error_type,X_descriptors,rmse
+70,KN,MVL,reg,0,IDT_ms,Point,rmse,"['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'n-i-alkanes', 'cyclic-alkanes', 'Aromatics', 'Formula_H']",1.7757544475334786
