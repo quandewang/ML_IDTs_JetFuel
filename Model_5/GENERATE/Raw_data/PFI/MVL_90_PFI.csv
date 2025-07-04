@@ -1,0 +1,2 @@
+train,split,model,type,seed,y,names,error_type,X_descriptors,rmse
+90,KN,MVL,reg,70,IDT_ms,Point,rmse,"['X_N2', 'P', 'T', 'Formula_C', 'n-C14', 'n-C15', 'poly-c-C14']",1.754005332076179
