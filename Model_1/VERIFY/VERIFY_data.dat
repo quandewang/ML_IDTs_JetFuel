@@ -1,0 +1,52 @@
+ROBERT v 1.2.1 2025/08/05 18:55:27 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "JetFuel_Ignition.csv"
+
+
+o  Starting tests to verify the prediction ability of the ML models with the VERIFY module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  ML model RF_90 (with no PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'PHI']
+   - Training points: 907
+   - Validation points: 101
+   - Test points: 112
+      -  Graph in: VERIFY/CV_train_valid_predict_RF_90_No_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_RF_90_No_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 0.78 + 10% & 25% threshold = 0.86 & 0.98
+         o y_mean: PASSED, RMSE = 1.91, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 2.78, higher than thresholds
+         o onehot: PASSED, RMSE = 1.7, higher than thresholds
+         - 5-fold CV : R2 = 0.8, MAE = 0.37, RMSE = 1.01
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  ML model RF_90_PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_O2', 'X_N2', 'P', 'T']
+   - Training points: 907
+   - Validation points: 101
+   - Test points: 112
+      -  Graph in: VERIFY/CV_train_valid_predict_RF_90_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_RF_90_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 0.91 + 10% & 25% threshold = 1.0 & 1.14
+         o y_mean: PASSED, RMSE = 2.66, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 3.7, higher than thresholds
+         o onehot: PASSED, RMSE = 2.66, higher than thresholds
+         - 5-fold CV : R2 = 0.68, MAE = 0.49, RMSE = 1.27
+
+Time VERIFY: 2.65 seconds
+

@@ -1,0 +1,43 @@
+ROBERT v 1.2.1 2025/08/05 18:55:27 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "JetFuel_Ignition.csv"
+
+
+o  Starting data curation with the CURATE module
+
+o  Database JetFuel_Ignition.csv loaded successfully, including:
+   - 1120 datapoints
+   - 8 accepted descriptors
+   - 1 ignored descriptors
+   - 0 discarded descriptors
+
+o  Analyzing categorical variables
+   - No categorical variables were found
+
+o  Duplication filters activated
+   Excluded datapoints:
+   -  No datapoints were removed
+
+x  WARNING! The number of descriptors (8) is 25 times lower than the number of datapoints (1120), the correlation filters are loosen to thres_x = 0.95 and thres_y = 0.0001! Default thresholds (0.9 and 0.001) can be used with "--desc_thres False"
+o  Correlation filter activated with these thresholds: thres_x = 0.95, thres_y = 0.0001
+   Excluded descriptors:
+   - X_Ar: R**2 = 0.97 with X_N2
+   - X_He: error in R**2 with the IDT_ms values (are all the values the same?)
+
+o  8 columns remaining after applying duplicate, correlation filters and RFECV:
+   - Point
+   - IDT_ms
+   - X_Fuel
+   - X_O2
+   - X_N2
+   - P
+   - T
+   - PHI
+
+o  The Pearson heatmap was stored in CURATE/Pearson_heatmap.png.
+
+o  The curated database was stored in CURATE/JetFuel_Ignition_CURATE.csv.
+
+Time CURATE: 1.15 seconds
+
