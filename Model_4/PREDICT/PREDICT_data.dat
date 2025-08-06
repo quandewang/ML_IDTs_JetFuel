@@ -1,0 +1,265 @@
+ROBERT v 1.2.1 2025/08/05 18:58:07 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "JetFuel_Ignition_Three_Type.csv"
+
+
+o  Representation of predictions and analysis of ML models with the PREDICT module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  ML model RF_70 (with no PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'n-i-alkanes', 'cyclic-alkanes', 'Aromatics', 'Formula_H']
+   - Training points: 705
+   - Validation points: 303
+   - Test points: 112
+      -  Train set with predicted results: PREDICT/RF_70_train_No_PFI.csv
+      -  Validation set with predicted results: PREDICT/RF_70_valid_No_PFI.csv
+      -  Test set with predicted results: PREDICT/RF_70_test_No_PFI.csv
+
+   o  Saving graphs and CSV databases in:
+      -  Graph in: PREDICT/Results_RF_70_No_PFI.png
+      -  Graph in: PREDICT/CV_variability_RF_70_No_PFI.png
+
+   o  Results saved in PREDICT/Results_RF_70_No_PFI.dat:
+      -  Points Train:Validation:Test = 705:303:112
+      -  Proportion Train:Validation:Test = 63:27:10
+      -  Number of descriptors = 9
+      -  Proportion (train+valid.) points:descriptors = 1008:9
+      -  Train : R2 = 0.97, MAE = 0.14, RMSE = 0.38
+      -  Valid. : R2 = 0.94, MAE = 0.29, RMSE = 0.63
+      -  Test : R2 = 0.94, MAE = 0.23, RMSE = 0.48
+
+   o  Cross-validation variation (with 5-fold CV) graph saved in PREDICT/CV_variability_RF_70_No_PFI.png:
+      -  Standard deviations saved in PREDICT/RF_70_test_No_PFI.csv in the IDT_ms_pred_sd column
+      -  Average SD = 0.76
+      -  y range of dataset (train+valid.) = 0.01 to 24.42, total 24.41
+
+   o  SHAP plot saved in PREDICT/SHAP_RF_70_No_PFI.png
+      -  T = min: -2.4, max: 9.6
+      -  X_N2 = min: -0.79, max: 4.2
+      -  X_O2 = min: -0.95, max: 3.0
+      -  P = min: -1.4, max: 1.1
+      -  X_Fuel = min: -0.21, max: 0.74
+      -  Formula_H = min: -0.89, max: 0.35
+      -  Aromatics = min: -0.93, max: 0.1
+      -  n-i-alkanes = min: -0.093, max: 0.1
+      -  cyclic-alkanes = min: -0.081, max: 0.038
+
+   o  PFI plot saved in PREDICT/PFI_RF_70_No_PFI.png
+      Original score (from model.score, R2) = 0.94
+      -  T = 3.1 ± 0.12
+      -  X_O2 = 0.96 ± 0.1
+      -  X_N2 = 0.9 ± 0.083
+      -  Formula_H = 0.66 ± 0.079
+      -  P = 0.64 ± 0.04
+      -  Aromatics = 0.15 ± 0.011
+      -  X_Fuel = 0.11 ± 0.02
+      -  n-i-alkanes = 0.018 ± 0.012
+      -  cyclic-alkanes = 0.005 ± 0.0017
+
+   o  The Pearson heatmap was stored in PREDICT/Pearson_heatmap_No_PFI.png.
+      Ideally, variables should show low correlations.
+      x  WARNING! High correlations observed (up to r = -0.94 or R2 = 0.89, for n-i-alkanes and cyclic-alkanes)
+
+   o  Outliers plot saved in PREDICT/Outliers_RF_70_No_PFI.png
+      Train: 21 outliers out of 705 datapoints (3.0%)
+      -  27 (2.4 SDs)
+      -  150 (2.4 SDs)
+      -  319 (2.2 SDs)
+      -  320 (3.2 SDs)
+      -  322 (2.4 SDs)
+      -  323 (4.1 SDs)
+      -  325 (3.7 SDs)
+      -  364 (2.2 SDs)
+      -  403 (2.4 SDs)
+      -  426 (3.3 SDs)
+      -  442 (3.4 SDs)
+      -  620 (2.1 SDs)
+      -  646 (6.8 SDs)
+      -  647 (9.5 SDs)
+      -  670 (3.5 SDs)
+      -  671 (3.0 SDs)
+      -  711 (4.6 SDs)
+      -  984 (6.5 SDs)
+      -  985 (1.3e+01 SDs)
+      -  1011 (1e+01 SDs)
+      -  1120 (3.7 SDs)
+      Validation: 23 outliers out of 303 datapoints (7.6%)
+      -  402 (9.0 SDs)
+      -  406 (2.8 SDs)
+      -  424 (2.9 SDs)
+      -  427 (4.2 SDs)
+      -  440 (1.1e+01 SDs)
+      -  441 (6.4 SDs)
+      -  444 (3.2 SDs)
+      -  522 (7.0 SDs)
+      -  597 (4.6 SDs)
+      -  611 (5.4 SDs)
+      -  648 (6.2 SDs)
+      -  649 (4.3 SDs)
+      -  662 (4.8 SDs)
+      -  663 (6.0 SDs)
+      -  664 (3.8 SDs)
+      -  684 (2.1 SDs)
+      -  831 (2.0 SDs)
+      -  983 (9.3 SDs)
+      -  986 (4.3 SDs)
+      -  987 (5.3 SDs)
+      -  989 (6.0 SDs)
+      -  993 (3.1 SDs)
+      -  1010 (5.0 SDs)
+      Test: 7 outliers out of 112 datapoints (6.2%)
+      -  560 (4.3 SDs)
+      -  683 (6.0 SDs)
+      -  378 (2.8 SDs)
+      -  991 (4.1 SDs)
+      -  710 (5.3 SDs)
+      -  324 (3.5 SDs)
+      -  654 (4.9 SDs)
+
+   o  y-values distribution plot saved in PREDICT/y_distribution_RF_70_No_PFI.png
+      Ideally, the number of datapoints in the four quartiles of the y-range should be uniform (25% population in each quartile) to have similar confidence intervals in the predictions across the y-range
+      -  The number of points in each quartile is Q1: 968, Q2: 35, Q3: 1, Q4: 4
+      x  WARNING! Your data is not uniform (Q3 has 1 points while Q1 has 968)
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  ML model GB_60_PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: GB
+   - Descriptors: ['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'n-i-alkanes']
+   - Training points: 604
+   - Validation points: 404
+   - Test points: 112
+      -  Train set with predicted results: PREDICT/GB_60_train_PFI.csv
+      -  Validation set with predicted results: PREDICT/GB_60_valid_PFI.csv
+      -  Test set with predicted results: PREDICT/GB_60_test_PFI.csv
+
+   o  Saving graphs and CSV databases in:
+      -  Graph in: PREDICT/Results_GB_60_PFI.png
+      -  Graph in: PREDICT/CV_variability_GB_60_PFI.png
+
+   o  Results saved in PREDICT/Results_GB_60_PFI.dat:
+      -  Points Train:Validation:Test = 604:404:112
+      -  Proportion Train:Validation:Test = 54:36:10
+      -  Number of descriptors = 6
+      -  Proportion (train+valid.) points:descriptors = 1008:6
+      -  Train : R2 = 0.99, MAE = 0.19, RMSE = 0.31
+      -  Valid. : R2 = 0.94, MAE = 0.32, RMSE = 0.66
+      -  Test : R2 = 0.9, MAE = 0.34, RMSE = 0.68
+
+   o  Cross-validation variation (with 5-fold CV) graph saved in PREDICT/CV_variability_GB_60_PFI.png:
+      -  Standard deviations saved in PREDICT/GB_60_test_PFI.csv in the IDT_ms_pred_sd column
+      -  Average SD = 0.66
+      -  y range of dataset (train+valid.) = 0.01 to 24.42, total 24.41
+
+   o  SHAP plot saved in PREDICT/SHAP_GB_60_PFI.png
+      -  T = min: -1.8, max: 8.5
+      -  X_N2 = min: -0.48, max: 5.5
+      -  n-i-alkanes = min: -1.1, max: 1.4
+      -  P = min: -1.4, max: 1.2
+      -  X_Fuel = min: -0.31, max: 0.77
+      -  X_O2 = min: -0.16, max: 0.68
+
+   o  PFI plot saved in PREDICT/PFI_GB_60_PFI.png
+      Original score (from model.score, R2) = 0.92
+      -  T = 2.3 ± 0.055
+      -  X_N2 = 0.91 ± 0.2
+      -  P = 0.62 ± 0.072
+      -  n-i-alkanes = 0.2 ± 0.019
+      -  X_Fuel = 0.14 ± 0.013
+      -  X_O2 = 0.11 ± 0.013
+
+   o  The Pearson heatmap was stored in PREDICT/Pearson_heatmap_PFI.png.
+      Ideally, variables should show low correlations.
+      o  Correlations between variables are acceptable
+
+   o  Outliers plot saved in PREDICT/Outliers_GB_60_PFI.png
+      Train: 23 outliers out of 604 datapoints (3.8%)
+      -  11 (3.1 SDs)
+      -  300 (4.4 SDs)
+      -  320 (1e+01 SDs)
+      -  321 (2.6 SDs)
+      -  322 (8.9 SDs)
+      -  323 (6.7 SDs)
+      -  325 (7.4 SDs)
+      -  361 (2.6 SDs)
+      -  403 (3.3 SDs)
+      -  405 (2.3 SDs)
+      -  423 (3.6 SDs)
+      -  426 (2.4 SDs)
+      -  600 (2.2 SDs)
+      -  611 (2.9 SDs)
+      -  629 (2.1 SDs)
+      -  646 (2.3 SDs)
+      -  711 (3.2 SDs)
+      -  717 (2.1 SDs)
+      -  795 (2.0 SDs)
+      -  890 (3.2 SDs)
+      -  976 (2.2 SDs)
+      -  984 (2.6 SDs)
+      -  985 (4.4 SDs)
+      Validation: 36 outliers out of 404 datapoints (8.9%)
+      -  68 (2.9 SDs)
+      -  299 (5.0 SDs)
+      -  319 (1.4e+01 SDs)
+      -  366 (2.2 SDs)
+      -  402 (1.3e+01 SDs)
+      -  404 (3.7 SDs)
+      -  406 (4.8 SDs)
+      -  424 (6.3 SDs)
+      -  425 (4.6 SDs)
+      -  427 (3.2 SDs)
+      -  440 (1.5e+01 SDs)
+      -  441 (5.2 SDs)
+      -  443 (3.8 SDs)
+      -  444 (5.1 SDs)
+      -  522 (1.3e+01 SDs)
+      -  523 (7.1 SDs)
+      -  525 (4.5 SDs)
+      -  597 (4.2 SDs)
+      -  639 (3.3 SDs)
+      -  655 (8.9 SDs)
+      -  662 (6.7 SDs)
+      -  663 (1.9e+01 SDs)
+      -  664 (5.6 SDs)
+      -  665 (2.5 SDs)
+      -  670 (1.5e+01 SDs)
+      -  684 (2.4 SDs)
+      -  821 (2.7 SDs)
+      -  824 (3.8 SDs)
+      -  832 (2.4 SDs)
+      -  903 (2.8 SDs)
+      -  927 (2.6 SDs)
+      -  983 (1.1e+01 SDs)
+      -  987 (1.5e+01 SDs)
+      -  990 (4.5 SDs)
+      -  993 (4.2 SDs)
+      -  1013 (4.5 SDs)
+      Test: 11 outliers out of 112 datapoints (9.8%)
+      -  301 (5.4 SDs)
+      -  908 (2.8 SDs)
+      -  560 (3.8 SDs)
+      -  747 (2.5 SDs)
+      -  683 (7.4 SDs)
+      -  378 (5.7 SDs)
+      -  991 (7.2 SDs)
+      -  363 (3.3 SDs)
+      -  710 (4.6 SDs)
+      -  324 (1e+01 SDs)
+      -  654 (1.7e+01 SDs)
+
+   o  y-values distribution plot saved in PREDICT/y_distribution_GB_60_PFI.png
+      Ideally, the number of datapoints in the four quartiles of the y-range should be uniform (25% population in each quartile) to have similar confidence intervals in the predictions across the y-range
+      -  The number of points in each quartile is Q1: 968, Q2: 35, Q3: 1, Q4: 4
+      x  WARNING! Your data is not uniform (Q3 has 1 points while Q1 has 968)
+
+Time PREDICT: 29.34 seconds
+
