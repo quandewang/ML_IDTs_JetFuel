@@ -1,0 +1,101 @@
+ROBERT v 1.2.1 2025/08/05 18:56:41 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "JetFuel_Ignition.csv"
+
+
+o  Starting generation of ML models with the GENERATE module
+
+o  Database JetFuel_Ignition_CURATE.csv loaded successfully, including:
+   - 1120 datapoints
+   - 6 accepted descriptors
+   - 1 ignored descriptors
+   - 0 discarded descriptors
+
+o  Before hyproptimization, 10% of the data was separated as test set, using an even distribution of data points across the range of y values. The remaining data points will be split into training and validation.
+
+o  The database contains 1008 datapoints, the default random splitting will be used to select training and validation sets.
+
+x    WARNING! The database is imbalanced (imbalance ratio > 10, more values in the low half of values), KN data splitting will replace the default random splitting. You can use random splitting with "--auto_kn False".
+
+o  Starting heatmap scan with 3 ML models (['RF', 'GB', 'NN']) and 4 training sizes ([60, 70, 80, 90]).
+   Heatmap generation:
+   - 1/72 - Training size: 60, ML model: RF, seed: 0 
+   - 2/72 - Training size: 60, ML model: RF, seed: 8 
+   - 3/72 - Training size: 60, ML model: RF, seed: 19 
+   - 4/72 - Training size: 60, ML model: RF, seed: 43 
+   - 5/72 - Training size: 60, ML model: RF, seed: 70 
+   - 6/72 - Training size: 60, ML model: RF, seed: 233 
+   - 7/72 - Training size: 60, ML model: GB, seed: 0 
+   - 8/72 - Training size: 60, ML model: GB, seed: 8 
+   - 9/72 - Training size: 60, ML model: GB, seed: 19 
+   - 10/72 - Training size: 60, ML model: GB, seed: 43 
+   - 11/72 - Training size: 60, ML model: GB, seed: 70 
+   - 12/72 - Training size: 60, ML model: GB, seed: 233 
+   - 13/72 - Training size: 60, ML model: NN, seed: 0 
+   - 14/72 - Training size: 60, ML model: NN, seed: 8 
+   - 15/72 - Training size: 60, ML model: NN, seed: 19 
+   - 16/72 - Training size: 60, ML model: NN, seed: 43 
+   - 17/72 - Training size: 60, ML model: NN, seed: 70 
+   - 18/72 - Training size: 60, ML model: NN, seed: 233 
+   - 19/72 - Training size: 70, ML model: RF, seed: 0 
+   - 20/72 - Training size: 70, ML model: RF, seed: 8 
+   - 21/72 - Training size: 70, ML model: RF, seed: 19 
+   - 22/72 - Training size: 70, ML model: RF, seed: 43 
+   - 23/72 - Training size: 70, ML model: RF, seed: 70 
+   - 24/72 - Training size: 70, ML model: RF, seed: 233 
+   - 25/72 - Training size: 70, ML model: GB, seed: 0 
+   - 26/72 - Training size: 70, ML model: GB, seed: 8 
+   - 27/72 - Training size: 70, ML model: GB, seed: 19 
+   - 28/72 - Training size: 70, ML model: GB, seed: 43 
+   - 29/72 - Training size: 70, ML model: GB, seed: 70 
+   - 30/72 - Training size: 70, ML model: GB, seed: 233 
+   - 31/72 - Training size: 70, ML model: NN, seed: 0 
+   - 32/72 - Training size: 70, ML model: NN, seed: 8 
+   - 33/72 - Training size: 70, ML model: NN, seed: 19 
+   - 34/72 - Training size: 70, ML model: NN, seed: 43 
+   - 35/72 - Training size: 70, ML model: NN, seed: 70 
+   - 36/72 - Training size: 70, ML model: NN, seed: 233 
+   - 37/72 - Training size: 80, ML model: RF, seed: 0 
+   - 38/72 - Training size: 80, ML model: RF, seed: 8 
+   - 39/72 - Training size: 80, ML model: RF, seed: 19 
+   - 40/72 - Training size: 80, ML model: RF, seed: 43 
+   - 41/72 - Training size: 80, ML model: RF, seed: 70 
+   - 42/72 - Training size: 80, ML model: RF, seed: 233 
+   - 43/72 - Training size: 80, ML model: GB, seed: 0 
+   - 44/72 - Training size: 80, ML model: GB, seed: 8 
+   - 45/72 - Training size: 80, ML model: GB, seed: 19 
+   - 46/72 - Training size: 80, ML model: GB, seed: 43 
+   - 47/72 - Training size: 80, ML model: GB, seed: 70 
+   - 48/72 - Training size: 80, ML model: GB, seed: 233 
+   - 49/72 - Training size: 80, ML model: NN, seed: 0 
+   - 50/72 - Training size: 80, ML model: NN, seed: 8 
+   - 51/72 - Training size: 80, ML model: NN, seed: 19 
+   - 52/72 - Training size: 80, ML model: NN, seed: 43 
+   - 53/72 - Training size: 80, ML model: NN, seed: 70 
+   - 54/72 - Training size: 80, ML model: NN, seed: 233 
+   - 55/72 - Training size: 90, ML model: RF, seed: 0 
+   - 56/72 - Training size: 90, ML model: RF, seed: 8 
+   - 57/72 - Training size: 90, ML model: RF, seed: 19 
+   - 58/72 - Training size: 90, ML model: RF, seed: 43 
+   - 59/72 - Training size: 90, ML model: RF, seed: 70 
+   - 60/72 - Training size: 90, ML model: RF, seed: 233 
+   - 61/72 - Training size: 90, ML model: GB, seed: 0 
+   - 62/72 - Training size: 90, ML model: GB, seed: 8 
+   - 63/72 - Training size: 90, ML model: GB, seed: 19 
+   - 64/72 - Training size: 90, ML model: GB, seed: 43 
+   - 65/72 - Training size: 90, ML model: GB, seed: 70 
+   - 66/72 - Training size: 90, ML model: GB, seed: 233 
+   - 67/72 - Training size: 90, ML model: NN, seed: 0 
+   - 68/72 - Training size: 90, ML model: NN, seed: 8 
+   - 69/72 - Training size: 90, ML model: NN, seed: 19 
+   - 70/72 - Training size: 90, ML model: NN, seed: 43 
+   - 71/72 - Training size: 90, ML model: NN, seed: 70 
+   - 72/72 - Training size: 90, ML model: NN, seed: 233 
+
+o  Heatmap_ML_models_No_PFI succesfully created in GENERATE/Raw_data
+
+o  Heatmap_ML_models_PFI succesfully created in GENERATE/Raw_data
+
+Time GENERATE: 469.63 seconds
+

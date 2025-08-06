@@ -1,0 +1,52 @@
+ROBERT v 1.2.1 2025/08/05 18:56:41 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "JetFuel_Ignition.csv"
+
+
+o  Starting tests to verify the prediction ability of the ML models with the VERIFY module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  ML model RF_60 (with no PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'Formula_H']
+   - Training points: 604
+   - Validation points: 404
+   - Test points: 112
+      -  Graph in: VERIFY/CV_train_valid_predict_RF_60_No_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_RF_60_No_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 0.74 + 10% & 25% threshold = 0.81 & 0.92
+         o y_mean: PASSED, RMSE = 2.39, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 3.23, higher than thresholds
+         o onehot: PASSED, RMSE = 2.38, higher than thresholds
+         - 5-fold CV : R2 = 0.89, MAE = 0.28, RMSE = 0.75
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  ML model RF_60_PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_O2', 'X_N2', 'P', 'T']
+   - Training points: 604
+   - Validation points: 404
+   - Test points: 112
+      -  Graph in: VERIFY/CV_train_valid_predict_RF_60_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_RF_60_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 1.18 + 10% & 25% threshold = 1.3 & 1.48
+         o y_mean: PASSED, RMSE = 2.43, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 3.23, higher than thresholds
+         o onehot: PASSED, RMSE = 2.46, higher than thresholds
+         - 5-fold CV : R2 = 0.82, MAE = 0.43, RMSE = 0.94
+
+Time VERIFY: 3.15 seconds
+
