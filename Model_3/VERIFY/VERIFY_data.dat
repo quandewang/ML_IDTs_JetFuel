@@ -1,0 +1,52 @@
+ROBERT v 1.2.1 2025/08/05 18:54:46 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "JetFuel_Ignition_Five_Type.csv"
+
+
+o  Starting tests to verify the prediction ability of the ML models with the VERIFY module
+
+
+------- Starting model with all variables (No PFI) -------
+
+o  ML model RF_60 (with no PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'iso-alkanes', 'monicyclic-alkanes', 'polycyclic-alkanes', 'Aromatics', 'Others', 'Formula_H']
+   - Training points: 605
+   - Validation points: 404
+   - Test points: 112
+      -  Graph in: VERIFY/CV_train_valid_predict_RF_60_No_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_RF_60_No_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 0.58 + 10% & 25% threshold = 0.64 & 0.72
+         o y_mean: PASSED, RMSE = 2.4, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 3.34, higher than thresholds
+         o onehot: PASSED, RMSE = 2.24, higher than thresholds
+         - 5-fold CV : R2 = 0.88, MAE = 0.3, RMSE = 0.78
+
+
+------- Starting model with PFI filter (only important descriptors used) -------
+
+o  ML model RF_60_PFI (with PFI filter) and Xy database were loaded, including:
+   - Target value: IDT_ms
+   - Names: Point
+   - Model: RF
+   - Descriptors: ['X_Fuel', 'X_O2', 'X_N2', 'P', 'T', 'iso-alkanes', 'Aromatics', 'Others']
+   - Training points: 605
+   - Validation points: 404
+   - Test points: 112
+      -  Graph in: VERIFY/CV_train_valid_predict_RF_60_PFI.png
+
+   o  VERIFY plot saved in VERIFY/VERIFY_tests_RF_60_PFI.png
+      Results of flawed models and cross-validation:
+      Original RMSE (valid. set) 0.59 + 10% & 25% threshold = 0.65 & 0.74
+         o y_mean: PASSED, RMSE = 2.39, higher than thresholds
+         o y_shuffle: PASSED, RMSE = 3.32, higher than thresholds
+         o onehot: PASSED, RMSE = 2.31, higher than thresholds
+         - 5-fold CV : R2 = 0.89, MAE = 0.28, RMSE = 0.73
+
+Time VERIFY: 3.23 seconds
+
