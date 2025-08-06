@@ -1,0 +1,2 @@
+train,split,model,type,seed,y,names,error_type,X_descriptors,n_estimators,max_depth,max_features,min_samples_split,min_samples_leaf,min_weight_fraction_leaf,ccp_alpha,oob_score,max_samples,rmse
+70,KN,RF,reg,0,IDT_ms,Point,rmse,"['X_Fuel', 'X_N2', 'P', 'T', 'Formula_C', 'n-C9', 'n-C14', 'n-C15', 'n-C18', 'mono-c-C12', 'mono-c-C15', 'poly-c-C14', 'poly-c-C15', 'aro-C11', 'aro-C13']",40,20,0.75,2,1,0,0,False,0.5,0.5003956581858656

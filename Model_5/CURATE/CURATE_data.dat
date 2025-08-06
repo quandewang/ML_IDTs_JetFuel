@@ -1,0 +1,103 @@
+ROBERT v 1.2.1 2025/08/05 19:00:12 
+How to cite: Dalmau, D.; Alegre Requena, J. V. WIREs Comput Mol Sci. 2024, DOI: 10.1002/WCMS.1733
+
+Command line used in ROBERT: python -m robert --names "Point" --y "IDT_ms" --model "[RF,GB,NN]" --csv_name "Ignition_2D_GC_ML.csv"
+
+
+o  Starting data curation with the CURATE module
+
+o  Database Ignition_2D_GC_ML.csv loaded successfully, including:
+   - 366 datapoints
+   - 69 accepted descriptors
+   - 1 ignored descriptors
+   - 0 discarded descriptors
+
+o  Analyzing categorical variables
+   - No categorical variables were found
+
+o  Duplication filters activated
+   Excluded datapoints:
+   -  No datapoints were removed
+
+o  Correlation filter activated with these thresholds: thres_x = 0.7, thres_y = 0.001
+   Excluded descriptors:
+   - X_O2: R**2 = 0.97 with X_N2
+   - X_Ar: error in R**2 with the IDT_ms values (are all the values the same?)
+   - X_He: error in R**2 with the IDT_ms values (are all the values the same?)
+   - Formula_H: R**2 = 0.8 with Formula_C
+   - n-C16: R**2 = 0.78 with Formula_C
+   - n-C17: R**2 = 0.77 with Formula_C
+   - i-C16: R**2 = 0.78 with Formula_C
+   - i-C17: R**2 = 0.79 with Formula_C
+   - i-C18: R**2 = 0.8 with Formula_C
+   - n-C10: R**2 = 0.74 with n-C7
+   - i-C8: R**2 = 0.89 with n-C7
+   - aro-C7: R**2 = 0.93 with n-C7
+   - aro-C8: R**2 = 0.85 with n-C7
+   - aro-C9: R**2 = 0.92 with n-C7
+   - n-C7: R**2 = 0.93 with aro-C10
+   - n-C8: R**2 = 0.78 with mono-c-C7
+   - n-C11: R**2 = 0.99 with n-C12
+   - n-C12: R**2 = 0.98 with n-C13
+   - n-C13: R**2 = 0.71 with mono-c-C7
+   - i-C15: R**2 = 0.81 with n-C15
+   - mono-c-C11: R**2 = 0.74 with n-C15
+   - mono-c-C16: R**2 = 0.76 with n-C18
+   - mono-c-C17: R**2 = 0.72 with n-C18
+   - i-C7: error in R**2 with the IDT_ms values (are all the values the same?)
+   - i-C10: R**2 = 0.9 with i-C9
+   - mono-c-C8: R**2 = 0.91 with i-C9
+   - mono-c-C9: R**2 = 0.91 with i-C9
+   - mono-c-C10: R**2 = 0.86 with i-C9
+   - i-C9: R**2 = 0.85 with poly-c-C9
+   - i-C12: R**2 = 0.93 with i-C11
+   - i-C13: R**2 = 0.97 with i-C11
+   - i-C14: R**2 = 0.86 with i-C11
+   - i-C11: R**2 = 0.73 with poly-c-C8
+   - mono-c-C7: R**2 = 0.76 with aro-C10
+   - mono-c-C13: R**2 = 0.9 with mono-c-C12
+   - mono-c-C14: R**2 = 0.86 with mono-c-C15
+   - mono-c-C18: R**2 = 0.97 with mono-c-C15
+   - aro-C15: R**2 = 0.94 with mono-c-C15
+   - aro-C16: R**2 = 0.96 with mono-c-C15
+   - poly-c-C7: error in R**2 with the IDT_ms values (are all the values the same?)
+   - poly-c-C8: R**2 = 0.73 with poly-c-C9
+   - poly-c-C10: R**2 = 0.98 with poly-c-C9
+   - poly-c-C11: R**2 = 0.99 with poly-c-C9
+   - poly-c-C12: R**2 = 0.99 with poly-c-C9
+   - poly-c-C13: R**2 = 0.99 with poly-c-C9
+   - poly-c-C9: R**2 = 0.97 with poly-c-C14
+   - poly-c-C16: R**2 = 0.86 with poly-c-C15
+   - poly-c-C17: error in R**2 with the IDT_ms values (are all the values the same?)
+   - poly-c-C18: error in R**2 with the IDT_ms values (are all the values the same?)
+   - aro-C10: R**2 = 0.99 with aro-C11
+   - aro-C12: R**2 = 0.89 with aro-C11
+   - aro-C14: R**2 = 0.0 with the IDT_ms values
+   - aro-C17: error in R**2 with the IDT_ms values (are all the values the same?)
+   - aro-C18: error in R**2 with the IDT_ms values (are all the values the same?)
+
+o  17 columns remaining after applying duplicate, correlation filters and RFECV:
+   - Point
+   - IDT_ms
+   - X_Fuel
+   - X_N2
+   - P
+   - T
+   - Formula_C
+   - n-C9
+   - n-C14
+   - n-C15
+   - n-C18
+   - mono-c-C12
+   - mono-c-C15
+   - poly-c-C14
+   - poly-c-C15
+   - aro-C11
+   - aro-C13
+
+o  The Pearson heatmap was stored in CURATE/Pearson_heatmap.png.
+
+o  The curated database was stored in CURATE/Ignition_2D_GC_ML_CURATE.csv.
+
+Time CURATE: 0.94 seconds
+

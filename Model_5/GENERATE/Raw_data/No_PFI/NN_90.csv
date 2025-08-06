@@ -1,0 +1,2 @@
+train,split,model,type,seed,y,names,error_type,X_descriptors,batch_size,hidden_layer_sizes,learning_rate_init,max_iter,validation_fraction,alpha,shuffle,tol,early_stopping,beta_1,beta_2,epsilon,rmse
+90,KN,NN,reg,19,IDT_ms,Point,rmse,"['X_Fuel', 'X_N2', 'P', 'T', 'Formula_C', 'n-C9', 'n-C14', 'n-C15', 'n-C18', 'mono-c-C12', 'mono-c-C15', 'poly-c-C14', 'poly-c-C15', 'aro-C11', 'aro-C13']",8,[32],0.001,200,0.2,0.0001,True,0.0001,False,0.999,0.999,1e-08,0.8014912305392417
